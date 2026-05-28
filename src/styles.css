@@ -1,48 +1,127 @@
-body { background-color: #121420; margin: 0; color: white; font-family: sans-serif; }
 
-.cuadro-basico {
-  background-color: #2d2f3b;
-  border: 1px solid #4e5166;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 :root {
   --fondo-principal: #0b0c14;
   --fondo-secundario: #1a1c29;
   --accion-peligro: #ff4757;
   --bordes-lineas: #4e5166;
   --texto-principal: #ffffff;
-  --texto-secundario: #a4a4a4; 
+  --texto-secundario: #a4a4a4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--fondo-principal);
   color: var(--texto-principal);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container,
+.container-fluid {
+  width: 100%;
+}
+
+.cuadro-basico {
+  background-color: #2d2f3b;
+  border: 1px solid var(--bordes-lineas);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-juego {
   background-color: var(--fondo-secundario);
   border: 1px solid var(--bordes-lineas);
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-juego:hover {
   border-color: var(--accion-peligro);
   transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 71, 87, 0.18);
 }
 
 .btn-buy {
   background-color: var(--accion-peligro);
   color: white;
-  font-weight: bold;
+  font-weight: 700;
   border: none;
   text-transform: uppercase;
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .btn-buy:hover {
   background-color: #e03d4a;
+  transform: scale(1.02);
   box-shadow: 0 0 15px rgba(255, 71, 87, 0.4);
+}
+
+.text-secondary {
+  color: var(--texto-secundario) !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #11141f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2b3145;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accion-peligro);
+}
+
+@media (max-width: 992px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .container,
+  .container-fluid {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+  .card-juego {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
 }

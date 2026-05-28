@@ -1,85 +1,72 @@
-<nav class="navbar navbar-dark bg-dark border-bottom border-secondary p-2">
-    <div class="container-fluid">
-
-        <div class="d-flex align-items-center me-auto side-block">
-            <a class="navbar-brand m-0" routerLink="/">
-                <img src="logos/fondoRK.png" alt="Logo" title="Respawn Keys" width="70" height="70">
-            </a>
-        </div>
-
-        <div class="d-flex align-items-center justify-content-center mx-auto">
-            <div class="console-group d-flex gap-4">
-                
-                <div class="console-box btn-pc d-flex align-items-center px-2 py-1 rounded" [routerLink]="['/categoria', 'pc']">
-                    <img src="iconos/pcMenu.png" alt="PC" width="40" class="me-1">
-                    <span class="fw-semibold lead text-white">PC</span>
-                </div>
-
-                <div class="console-box btn-xbox d-flex align-items-center px-2 py-1 rounded" [routerLink]="['/categoria', 'xbox']">
-                    <img src="iconos/xbMenu.png" alt="XB" width="40" class="me-1">
-                    <span class="fw-semibold lead text-white">Xbox</span>
-                </div>
-
-                <div class="console-box btn-ps d-flex align-items-center px-2 py-1 rounded" [routerLink]="['/categoria', 'playstation']">
-                    <img src="iconos/psMenu.png" alt="PS" width="40" class="me-1">
-                    <span class="fw-semibold lead text-white">PlayStation</span>
-                </div>
-
-                <div class="console-box btn-nintendo d-flex align-items-center px-2 py-1 rounded" [routerLink]="['/categoria', 'nintendo']">
-                    <img src="iconos/nsMenu.png" alt="NS" width="40" class="me-1">
-                    <span class="fw-semibold lead text-white">Nintendo</span>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="d-flex align-items-center ms-auto gap-3 side-block justify-content-end">
-
-            <button class="btn-search-navbar" type="button" (click)="toggleBuscador()">
-                <img src="iconos/lupaMenu.png" width="28" height="28" alt="Buscar">
-            </button>
-
-            <a routerLink="/carrito" class="position-relative d-flex align-items-center">
-                <img src="iconos/carritoMenu.png" alt="Carrito" title="Carrito" width="60" height="60" class="nav-icon-img">
-                <span *ngIf="cantidadJuegos > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.8rem;">
-                    {{ cantidadJuegos }}
-                </span>
-            </a>
-
-            <div class="menu-usuario">
-                <button (click)="toggleMenu()" class="btn-avatar-menu">
-                    <img src="iconos/usuarioMenu.png" alt="Usuario" title="Mi Cuenta" width="60" height="60" class="nav-icon-img">
-                </button>
-
-                <div *ngIf="menuAbierto" class="dropdown-menu">
-                    
-                    <ng-container *ngIf="usuarioLogueado">
-                        <a routerLink="/editar-perfil">Editar Perfil</a>
-                        <button (click)="cerrarSesion()">Cerrar Sesión</button>
-                    </ng-container>
-
-                    <ng-container *ngIf="!usuarioLogueado">
-                        <a routerLink="/login">Iniciar Sesión</a>
-                    </ng-container>
-
-                </div>
-            </div>
-
-        </div>
+<nav class="navbar navbar-dark bg-dark border-bottom border-secondary">
+  <div class="container-fluid">
+    <div class="side-block">
+      <a class="navbar-brand m-0" routerLink="/">
+        <img src="logos/fondoRK.png" alt="Logo"  width="50" title="Respawn Keys" class="logo-navbar">
+      </a>
     </div>
+
+    <div class="mx-auto">
+      <div class="console-group">
+        <div class="console-box btn-pc" [routerLink]="['/categoria', 'pc']">
+          <img src="iconos/pcMenu.png" alt="PC" class="console-icon">
+          <span>PC</span>
+        </div>
+        <div class="console-box btn-xbox" [routerLink]="['/categoria', 'xbox']">
+          <img src="iconos/xbMenu.png" alt="XB" class="console-icon">
+          <span>Xbox</span>
+        </div>
+        <div class="console-box btn-ps" [routerLink]="['/categoria', 'playstation']">
+          <img src="iconos/psMenu.png" alt="PS" class="console-icon">
+          <span>PS</span>
+        </div>
+        <div class="console-box btn-nintendo" [routerLink]="['/categoria', 'nintendo']">
+          <img src="iconos/nsMenu.png" alt="NS" class="console-icon">
+          <span>Switch</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-block justify-content-end navbar-right">
+      <button class="btn-search-navbar" type="button" (click)="toggleBuscador()">
+        <img src="iconos/lupaMenu.png" width="22" height="22" alt="Buscar">
+      </button>
+
+      <a routerLink="/carrito" class="position-relative d-flex align-items-center">
+        <img src="iconos/carritoMenu.png" alt="Carrito" title="Carrito" class="nav-icon-img">
+        <span *ngIf="cantidadJuegos > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.7rem;">
+          {{ cantidadJuegos }}
+        </span>
+      </a>
+
+      <div class="menu-usuario">
+        <button (click)="toggleMenu()" class="btn-avatar-menu">
+          <img src="iconos/usuarioMenu.png" alt="Usuario" title="Mi Cuenta" class="nav-icon-img">
+        </button>
+
+        <div *ngIf="menuAbierto" class="dropdown-menu">
+          <ng-container *ngIf="usuarioLogueado">
+            <a routerLink="/editar-perfil">Editar Perfil</a>
+            <button (click)="cerrarSesion()">Cerrar Sesión</button>
+          </ng-container>
+
+          <ng-container *ngIf="!usuarioLogueado">
+            <a routerLink="/login">Iniciar Sesión</a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
 </nav>
 
 <div *ngIf="buscadorAbierto" class="search-container border-bottom border-secondary">
-    <div class="container py-3">
-        
-        <form class="search-box d-flex gap-2" (submit)="$event.preventDefault(); buscarJuego()">
-            <input type="text" class="form-control search-input" placeholder="Buscar juegos..." [(ngModel)]="busqueda" name="busqueda">
-            <button class="btn btn-danger px-4" type="button" (click)="buscarJuego()">Buscar</button>
-        </form>
-
-        <small class="text-secondary d-block mt-2">
-            Busca cualquier juego o presiona Enter vacío para ver todo el catálogo.
-        </small>
-
-    </div>
+  <div class="container py-3">
+    <form class="search-box" (submit)="$event.preventDefault(); buscarJuego()">
+      <input type="text" class="form-control search-input" placeholder="Buscar juegos..." [(ngModel)]="busqueda" name="busqueda">
+      <button class="btn btn-danger px-4" type="button" (click)="buscarJuego()">Buscar</button>
+    </form>
+    <small class="text-secondary d-block mt-2">
+      Busca cualquier juego o presiona Enter vacío para ver todo el catálogo.
+    </small>
+  </div>
 </div>
