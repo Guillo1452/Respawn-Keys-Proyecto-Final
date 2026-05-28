@@ -3,7 +3,10 @@
   min-height: 70px;
   height: auto;
   padding: 0.5rem 1rem;
-  position: sticky;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   top: 0;
   z-index: 1000000;
   border-bottom: 1px solid #2a2d3d;
