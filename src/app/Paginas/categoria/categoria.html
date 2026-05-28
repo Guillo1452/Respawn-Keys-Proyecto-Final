@@ -1,0 +1,66 @@
+<div class="categoria-page">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-lg-3 mb-4">
+        <div class="sidebar-filtros">
+          <h3 class="filtro-titulo">Filtros</h3>
+
+          <div class="mb-4">
+            <label class="text-secondary mb-2 d-block">Plataforma</label>
+            <select class="form-select bg-dark text-white border-secondary" (change)="cambiarPlataforma($event)">
+              <option value="todas">Todas</option>
+              <option value="pc">PC</option>
+              <option value="playstation">PlayStation</option>
+              <option value="xbox">Xbox</option>
+              <option value="nintendo">Nintendo</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-secondary mb-2 d-block">Ordenar por</label>
+            <select class="form-select bg-dark text-white border-secondary" (change)="cambiarOrden($event)">
+              <option value="rating">Mejor Rating</option>
+              <option value="nuevos">Más Nuevos</option>
+              <option value="precio-menor">Precio Menor</option>
+              <option value="precio-mayor">Precio Mayor</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-9">
+        <h1 class="titulo-categoria">Categoría: <span>{{ categoriaActual }}</span></h1>
+
+        <div class="grid-juegos" *ngIf="juegosFiltrados().length > 0">
+          <div *ngFor="let juego of juegosFiltrados()" class="card-juego" [routerLink]="['/detalle', juego.id]">
+            
+            <div class="card-img-container">
+              <img [src]="juego.fotocarrito || juego.principal" class="card-img-top" [alt]="juego.titulo">
+              <span class="badge-categoria">⭐ {{ juego.rating }}</span>
+            </div>
+
+            <div class="card-body">
+              <p class="text-categoria">{{ juego.categoria }}</p>
+              <h5 class="titulo-juego">{{ juego.titulo }}</h5>
+              <p class="text-plataforma">{{ juego.plataforma }}</p>
+              
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <span class="precio-juego">${{ juego.precio | number:'1.0-0' }}</span>
+                <button class="btn-comprar">Comprar</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="no-juegos" *ngIf="juegosFiltrados().length === 0">
+          <h3>No se encontraron juegos</h3>
+          <p class="text-secondary">Prueba otro filtro.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

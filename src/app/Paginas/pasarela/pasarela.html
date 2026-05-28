@@ -1,0 +1,97 @@
+<div class="pagos-container">
+  <div class="container py-5">
+
+    <div class="steps-container mb-5">
+      <div class="step active-step">
+        <div class="step-circle">1<i class="bi bi-check"></i></div>
+        <span>Carrito</span>
+      </div>
+      <div class="line active-line"></div>
+      <div class="step active-step">
+        <div class="step-circle">2</div>
+        <span>Pago</span>
+      </div>
+      <div class="line"></div>
+      <div class="step">
+        <div class="step-circle">3</div>
+        <span>Activación</span>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="pago-card p-4">
+          <h2 class="mb-4 text-white">
+            <i class="bi bi-credit-card-2-front me-2 text-danger"></i>Método de Pago
+          </h2>
+          
+          <form (ngSubmit)="procesarPago()" #pagoForm="ngForm">
+            <div class="mb-3">
+              <label class="form-label text-secondary">Nombre en la tarjeta</label>
+              <input type="text" class="form-control" name="nombre" [(ngModel)]="datosPago.nombre" required placeholder="Nombre">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label text-secondary">Número de tarjeta</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-hash"></i></span>
+                <input type="text" class="form-control" name="tarjeta" [(ngModel)]="datosPago.tarjeta" 
+                       required maxlength="19" placeholder="0000 0000 0000 0000"
+                       (input)="formatearTarjeta()"
+                       (keypress)="$event.charCode >= 48 && $event.charCode <= 57">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label text-secondary">Expiración (MM/AA)</label>
+                <input type="text" class="form-control" name="expiracion" [(ngModel)]="datosPago.expiracion" 
+                       required maxlength="5" placeholder="12/26"
+                       (input)="formatearExpiracion()"
+                       (keypress)="$event.charCode >= 48 && $event.charCode <= 57">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label text-secondary">CVV</label>
+                <input type="password" class="form-control" name="cvv" [(ngModel)]="datosPago.cvv" 
+                       required maxlength="3" placeholder="***"
+                       (input)="formatearCVV()"
+                       (keypress)="$event.charCode >= 48 && $event.charCode <= 57">
+              </div>
+            </div>
+
+            <button type="submit" class="btn-pagar w-100 mt-3" [disabled]="!pagoForm.valid || procesando">
+              <span *ngIf="!procesando">
+                Confirmar Pago de ${{ total | number:'1.0-0' }} COP
+              </span>
+              <span *ngIf="procesando">
+                <span class="spinner-border spinner-border-sm me-2"></span> Procesando...
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="resumen-pago-card p-4">
+          <h4 class="mb-3 text-white">Resumen del pedido</h4>
+          <div class="linea-resumen d-flex justify-content-between mb-2 text-secondary">
+            <span>Subtotal</span>
+            <span>${{ total | number:'1.0-0' }} COP</span>
+          </div>
+          <div class="linea-resumen d-flex justify-content-between mb-3 text-success">
+            <span>Impuestos (IVA)</span>
+            <span>Incluido</span>
+          </div>
+          <hr class="border-secondary">
+          <div class="d-flex justify-content-between total-pago">
+            <span class="text-white">TOTAL</span>
+            <span class="text-danger fw-bold">${{ total | number:'1.0-0' }} COP</span>
+          </div>
+          <p class="text-secondary small mt-3">
+            <i class="bi bi-shield-check me-1"></i> Pago encriptado y seguro.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

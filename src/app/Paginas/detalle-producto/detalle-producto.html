@@ -1,0 +1,95 @@
+<div class="detalle-page" *ngIf="juegoActual as juego">
+
+  <div class="hero-bg" [style.backgroundImage]="'url(' + imagenPrincipal + ')'"></div>
+
+  <div class="container-fluid contenido">
+    <div class="row g-5 align-items-start">
+
+      <div class="col-lg-7">
+        <div class="game-image-container">
+          
+          <div class="image-wrapper">
+            <button type="button" class="btn-slider left" (click)="imagenAnterior()">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            
+            <img [src]="imagenPrincipal" class="game-image" [alt]="juego.titulo" />
+            
+            <button type="button" class="btn-slider right" (click)="imagenSiguiente()">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+
+          <div class="mini-gallery">
+            <img [src]="juego.principal" class="mini" [class.active-mini]="imagenPrincipal === juego.principal" (click)="cambiarImagen(juego.principal)" />
+            <img *ngFor="let img of imagenes" [src]="img" class="mini" [class.active-mini]="imagenPrincipal === img" (click)="cambiarImagen(img)" />
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="game-card">
+          <span class="categoria">{{ juego.categoria | uppercase }}</span>
+          <h1 class="titulo">{{ juego.titulo }}</h1>
+
+          <div class="tags">
+            <div class="tag"><i [class]="plataformaActual.icono"></i> {{ plataformaSeleccionada }}</div>
+            <div class="tag success"><i class="bi bi-check-lg"></i> Disponible</div>
+            <div class="tag success"><i class="bi bi-lightning-charge-fill"></i> Digital</div>
+          </div>
+
+          <div class="selectors">
+            <div class="selector-box">
+              <label class="text-secondary small mb-1 d-block">Seleccionar Plataforma</label>
+              <select class="form-select custom-select" [(ngModel)]="plataformaSeleccionada">
+                <option *ngFor="let plataforma of plataformasFiltradas" [value]="plataforma.nombre">{{ plataforma.nombre }}</option>
+              </select>
+            </div>
+
+            <div class="selector-box">
+              <label class="text-secondary small mb-1 d-block">Seleccionar Edición</label>
+              <select class="form-select custom-select" [(ngModel)]="edicionSeleccionada">
+                <option>Standard Edition</option>
+                <option>Ultimate Edition</option>
+                <option>Deluxe Edition</option>
+              </select>
+            </div>
+          </div>
+
+          <p class="descripcion">{{ juego.descripcion }}</p>
+
+          <div class="key-info">
+            <div class="key-header">
+              <div class="key-logo"><i [class]="plataformaActual.icono"></i></div>
+              <div>
+                <h4>{{ plataformaActual.nombre }}</h4>
+                <span>{{ plataformaActual.tipo }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="price-box">
+            <h2>${{ juego.precio | number:'1.0-0' }} COP</h2>
+            <span class="badge bg-danger">-{{ juego.promocion || 15 }}%</span>
+          </div>
+
+          <button class="btn-buy mb-2" (click)="agregarAlCarrito()">Agregar al carro</button>
+
+          <div class="game-info mt-4">
+            <div><i class="bi bi-controller"></i> Compatible con {{ juego.plataforma || 'múltiples plataformas' }}</div>
+            <div><i class="bi bi-lightning-charge-fill"></i> Entrega instantánea</div>
+            <div><i class="bi bi-shield-check"></i> Compra 100% segura</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!juegoActual" class="container text-center py-5">
+  <h2 class="text-white">Buscando juego en RespawnKeys...</h2>
+  <button class="btn btn-outline-danger mt-3" routerLink="/">Volver al inicio</button>
+</div>

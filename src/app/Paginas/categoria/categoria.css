@@ -1,0 +1,272 @@
+/* ========================================= */
+/* PAGE */
+/* ========================================= */
+
+.categoria-page {
+  min-height: 100vh;
+  background: #0b0c14;
+  padding: 40px 0;
+}
+
+/* ========================================= */
+/* TITULO */
+/* ========================================= */
+
+.titulo-categoria {
+  font-weight: 900;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 30px;
+  border-left: 5px solid #ff4757;
+  padding-left: 15px;
+}
+
+.titulo-categoria span {
+  color: #ff4757;
+}
+
+/* ========================================= */
+/* SIDEBAR */
+/* ========================================= */
+
+.sidebar-filtros {
+  background: #161823;
+  border: 1px solid #2a2d3a;
+  border-radius: 16px;
+  padding: 25px;
+  position: sticky;
+  top: 100px;
+}
+
+/* ========================================= */
+/* TITULO FILTRO */
+/* ========================================= */
+
+.filtro-titulo {
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* ========================================= */
+/* BOTONES FILTRO */
+/* ========================================= */
+
+.btn-filtro {
+  width: 100%;
+  border: none;
+  background: #1f2333;
+  color: #bfc3d4;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  text-align: left;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.btn-filtro:hover {
+  background: #ff4757;
+  color: white;
+  transform: translateX(5px);
+}
+
+.btn-filtro.activo {
+  background: #ff4757;
+  color: white;
+}
+
+/* ========================================= */
+/* GRID */
+/* ========================================= */
+
+.grid-juegos {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(240px, 1fr)
+  );
+  gap: 25px;
+}
+
+/* ========================================= */
+/* CARD */
+/* ========================================= */
+
+.card-juego {
+  background-color: #1a1c29;
+  border: 1px solid #2d3142;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: 0.35s;
+  cursor: pointer;
+  height: 100%;
+}
+
+.card-juego:hover {
+  transform: translateY(-8px);
+  border-color: #ff4757;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* ========================================= */
+/* IMAGEN */
+/* ========================================= */
+
+.card-img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.card-juego:hover .card-img-top {
+  transform: scale(1.08);
+}
+
+/* ========================================= */
+/* BADGE */
+/* ========================================= */
+
+.badge-categoria {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4757;
+  color: white;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* ========================================= */
+/* BODY */
+/* ========================================= */
+
+.card-body {
+  padding: 18px;
+}
+
+/* ========================================= */
+/* CATEGORIA */
+/* ========================================= */
+
+.text-categoria {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+/* ========================================= */
+/* TITULO JUEGO */
+/* ========================================= */
+
+.titulo-juego {
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  min-height: 48px;
+}
+
+/* ========================================= */
+/* PLATAFORMA */
+/* ========================================= */
+
+.text-plataforma {
+  color: #8b90a7;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ========================================= */
+/* PRECIO */
+/* ========================================= */
+
+.precio-juego {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+/* ========================================= */
+/* BOTON */
+/* ========================================= */
+
+.btn-comprar {
+  background: #ff4757;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.btn-comprar:hover {
+  background: #e03d4a;
+  transform: scale(1.05);
+}
+
+/* ========================================= */
+/* NO RESULTADOS */
+/* ========================================= */
+
+.no-juegos {
+  background: #161823;
+  border: 1px solid #2a2d3a;
+  padding: 50px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+}
+
+/* ========================================= */
+/* SCROLLBAR */
+/* ========================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0c14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff4757;
+  border-radius: 10px;
+}
+
+/* ========================================= */
+/* RESPONSIVE */
+/* ========================================= */
+
+@media (max-width: 991px) {
+
+  .sidebar-filtros {
+    margin-bottom: 30px;
+    position: relative;
+    top: 0;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .card-img-top {
+    height: 260px;
+  }
+
+}

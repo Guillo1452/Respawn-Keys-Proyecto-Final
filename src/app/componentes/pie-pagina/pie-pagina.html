@@ -1,0 +1,66 @@
+<footer class="footer bg-dark text-white pt-5 pb-3 border-top border-secondary">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-4 mb-4">
+                <img src="logos/fondoRK.png" alt="Respawn Keys Logo" title="Respawn Keys" width="60" class="mb-3">
+                <h5 class="fw-bold text-danger">RESPAWN KEYS</h5>
+                <p class="small text-secondary">
+                    Tu destino número uno para llaves de videojuegos. 
+                    Calidad, rapidez y los mejores precios del mercado.
+                </p>
+            </div>
+
+            <div class="col-md-2 mb-4">
+                <h6 class="text-uppercase fw-bold mb-3 border-bottom border-danger pb-2 d-inline-block">Explorar</h6>
+                <ul class="list-unstyled">
+                    <li><a routerLink="/" class="text-secondary text-decoration-none hover-red">Inicio</a></li>
+                    <li><a href="#" class="text-secondary text-decoration-none hover-red">Novedades</a></li>
+                    <li><a href="#" class="text-secondary text-decoration-none hover-red">Ofertas</a></li>
+                    <li><a href="#" class="text-secondary text-decoration-none hover-red">Soporte</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2 mb-4">
+                <h6 class="text-uppercase fw-bold mb-3 border-bottom border-danger pb-2 d-inline-block">Plataformas</h6>
+                <ul class="list-unstyled">
+                    <li><a [routerLink]="['/categoria', 'pc']" class="text-secondary text-decoration-none hover-red">PC</a></li>
+                    <li><a [routerLink]="['/categoria', 'xbox']" class="text-secondary text-decoration-none hover-red">Xbox</a></li>
+                    <li><a [routerLink]="['/categoria', 'playstation']" class="text-secondary text-decoration-none hover-red">PlayStation</a></li>
+                    <li><a [routerLink]="['/categoria', 'nintendo']" class="text-secondary text-decoration-none hover-red">Nintendo</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <h6 class="text-uppercase fw-bold mb-3 border-bottom border-danger pb-2 d-inline-block">Síguenos</h6>
+                <div class="d-flex gap-3 mb-4">
+                    <a href="#" class="text-white fs-4 hover-red"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white fs-4 hover-red"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white fs-4 hover-red"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="text-white fs-4 hover-red"><i class="bi bi-discord"></i></a>
+                </div>
+                
+                <h6 class="text-uppercase fw-bold mb-3 border-bottom border-danger pb-2 d-inline-block">Métodos de Pago</h6>
+                <div class="d-flex gap-2 flex-wrap">
+                    <img src="iconos/visa.png" alt="Visa" width="40" title="visa" class="payment-icon">
+                    <img src="iconos/mastercard.png" alt="Mastercard" width="40" title="mastercard" class="payment-icon">
+                    <img src="iconos/paypal.png" alt="Paypal" width="40" title="paypal" class="payment-icon">
+                    <img src="iconos/pse.png" alt="PSE" width="40" title="pse" class="payment-icon">
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="border-secondary my-4">
+
+        <div class="row">
+            <div class="col text-center">
+                <p class="small text-secondary mb-0">
+                    &copy; 2026 <strong>Respawn Keys</strong>. Todos los derechos reservados. | 
+                    <a href="#" class="text-secondary text-decoration-none mx-2">Términos y Condiciones</a> | 
+                    <a href="#" class="text-secondary text-decoration-none mx-2">Privacidad</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>

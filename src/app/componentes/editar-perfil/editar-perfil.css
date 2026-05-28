@@ -1,0 +1,102 @@
+.perfil-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #0b0c14;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.perfil-card {
+  width: 100%;
+  max-width: 600px;
+  background: #1a1c29;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #4e5166;
+}
+
+h1 {
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  color: #ffffff;
+  margin-top: 30px;
+}
+
+.grupo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+label {
+  color: #888888;
+  margin-bottom: 8px;
+}
+
+input {
+  background: #0b0c14;
+  border: 1px solid #4e5166;
+  border-radius: 10px;
+  padding: 14px;
+  color: #ffffff;
+  outline: none;
+}
+
+input:focus {
+  border-color: #ff4757;
+}
+
+.btn-guardar,
+.btn-password {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #ff4757;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-guardar:hover,
+.btn-password:hover {
+  transform: scale(1.02);
+}
+
+hr {
+  margin: 40px 0;
+  border: 1px solid #4e5166;
+}
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 5px solid #4e5166;
+  border-top: 5px solid #ff4757;
+  border-radius: 50%;
+  animation: girar 1s linear infinite;
+}
+
+.loader-container p {
+  color: #ffffff;
+}
+
+@keyframes girar {
+  100% {
+    transform: rotate(360deg);
+  }
+}

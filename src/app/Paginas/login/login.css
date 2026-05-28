@@ -1,0 +1,119 @@
+:root{
+  --fondo-principal: #0b0c14;
+  --fondo-secundario: #1a1c29;
+  --accion: #ff4757;
+  --bordes: #4e5166;
+  --texto-principal: #ffffff;
+  --texto-secundario: #888888;
+}
+
+body{
+  background: var(--fondo-principal);
+  overflow: hidden;
+}
+
+/* PANEL IZQUIERDO */
+
+.panel-login{
+  background: var(--fondo-secundario);
+}
+
+/* TITULOS */
+
+h2{
+  color: var(--texto-principal);
+  font-weight: bold;
+}
+
+/* INPUTS */
+
+.form-control{
+  background: transparent;
+  border: 1px solid var(--bordes);
+  color: var(--texto-principal);
+  padding: 12px;
+  border: solid whitesmoke 1px;
+}
+
+.form-control:focus{
+  background: transparent;
+  color: var(--texto-principal);
+  border-color: var(--accion);
+  box-shadow: none;
+}
+
+/* PLACEHOLDER */
+
+.form-control::placeholder{
+  color: var(--texto-secundario);
+}
+
+/* BOTON LOGIN */
+
+.btn-login{
+  background: var(--accion);
+  border: none;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+  border: solid white 1px;
+}
+
+.btn-login:hover{
+  background: #ff5c6a;
+  transform: translateY(-2px);
+}
+
+/* TEXTO */
+
+p{
+  color: var(--texto-secundario);
+}
+
+/* LINKS */
+
+span{
+  color: var(--accion);
+  font-weight: 600;
+}
+
+/* IMAGEN */
+
+.imagen-login img{
+  object-fit: cover;
+}
+
+/* LOGO */
+
+.logo{
+  width: 70px;
+  margin-bottom: 20px;
+}
+.mensaje {
+  font-weight: bold;
+  animation: aparecer 0.3s ease;
+}
+
+.mensaje-error {
+  background-color: #ff4757;
+  color: white;
+  border: 1px solid #ff6b81;
+}
+
+.mensaje-success {
+  background-color: #2ed573;
+  color: white;
+  border: 1px solid #7bed9f;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

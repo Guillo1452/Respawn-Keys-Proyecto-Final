@@ -1,0 +1,48 @@
+body { background-color: #121420; margin: 0; color: white; font-family: sans-serif; }
+
+.cuadro-basico {
+  background-color: #2d2f3b;
+  border: 1px solid #4e5166;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+:root {
+  --fondo-principal: #0b0c14;
+  --fondo-secundario: #1a1c29;
+  --accion-peligro: #ff4757;
+  --bordes-lineas: #4e5166;
+  --texto-principal: #ffffff;
+  --texto-secundario: #a4a4a4; 
+}
+
+body {
+  background-color: var(--fondo-principal);
+  color: var(--texto-principal);
+}
+
+.card-juego {
+  background-color: var(--fondo-secundario);
+  border: 1px solid var(--bordes-lineas);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.card-juego:hover {
+  border-color: var(--accion-peligro);
+  transform: translateY(-5px);
+}
+
+.btn-buy {
+  background-color: var(--accion-peligro);
+  color: white;
+  font-weight: bold;
+  border: none;
+  text-transform: uppercase;
+}
+
+.btn-buy:hover {
+  background-color: #e03d4a;
+  box-shadow: 0 0 15px rgba(255, 71, 87, 0.4);
+}

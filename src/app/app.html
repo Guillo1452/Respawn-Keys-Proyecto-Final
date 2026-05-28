@@ -1,0 +1,14 @@
+<!-- barra de navegacion -->
+<app-barrana-navegacion></app-barrana-navegacion>
+
+<div *ngIf="mensaje" class="toast-gamer">
+  {{ mensaje }}
+</div>
+
+<!-- Cuerpo -->
+<main style="min-height: 60vh;">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Pie de pagina -->
+<app-pie-pagina></app-pie-pagina>

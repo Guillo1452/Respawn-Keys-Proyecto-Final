@@ -1,0 +1,66 @@
+<div class="pagos-container">
+    <div class="container py-5">
+
+        <div class="steps-container mb-5">
+            <div class="step active-step">
+                <div class="step-circle">
+                    <i class="bi bi-check-lg"></i>
+                </div>
+                <span>Carrito</span>
+            </div>
+
+            <div class="line active-line"></div>
+
+            <div class="step active-step">
+                <div class="step-circle">
+                    <i class="bi bi-check-lg"></i>
+                </div>
+                <span>Pago</span>
+            </div>
+
+            <div class="line active-line"></div>
+
+            <div class="step active-step">
+                <div class="step-circle shadow-red">3</div>
+                <span>Activación</span>
+            </div>
+        </div>
+
+        <div class="pago-card p-5 text-center shadow-lg animate__animated animate__fadeIn">
+            <div class="mb-4">
+                <div class="check-success-glow">
+                    <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
+                </div>
+            </div>
+
+            <h2 class="text-white mb-2 fw-bold">¡Pago Realizado con Éxito!</h2>
+            <p class="text-secondary mb-5">Haz clic en las llaves para revelar tus códigos de activación.</p>
+
+            <div class="row g-4 text-start">
+                <div class="col-md-6" *ngFor="let juego of productos">
+                    <div class="card bg-dark border-secondary p-3 key-card">
+                        
+                        <div class="d-flex align-items-center mb-3">
+                            <img [src]="juego.imagen" [alt]="juego.titulo" class="rounded me-3 shadow" style="width: 70px; height: 70px; object-fit: cover;">
+                            <h5 class="text-white m-0 fw-bold">{{juego.titulo}}</h5>
+                        </div>
+
+                        <label class="text-secondary small mb-2">CÓDIGO DE ACTIVACIÓN</label>
+
+                        <div class="key-container" (click)="revelarKey(juego)">
+                            <div class="key-blur" *ngIf="!juego.revelado">
+                                <i class="bi bi-eye-fill me-2"></i> REVELAR KEY
+                            </div>
+
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-black text-danger fw-bold border-secondary text-center" [value]="juego.key" readonly>
+                                <button class="btn btn-outline-danger" (click)="copiar(juego.key); $event.stopPropagation()" title="Copiar al portapapeles">
+                                    <i class="bi bi-clipboard"></i>
+                                </button>
+                            </div>
+                        </div> </div> </div> </div> <button class="btn-pagar mt-5 px-5" style="width: auto;" routerLink="/home">
+                Volver a la Tienda
+            </button>
+
+        </div> </div>
+</div>

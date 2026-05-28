@@ -1,0 +1,165 @@
+.key-card {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid #2c2f45 !important;
+    background-color: #0f111a !important;
+}
+
+.key-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff4757 !important;
+}
+
+.key-container {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.key-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 71, 87, 0.1);
+    backdrop-filter: blur(12px);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    border: 1px dashed #ff4757;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.key-blur:hover {
+    background: rgba(255, 71, 87, 0.2);
+    text-shadow: 0 0 10px white;
+    letter-spacing: 3px;
+}
+
+.check-success-glow {
+    filter: drop-shadow(0 0 15px rgba(40, 167, 69, 0.4));
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.bg-black {
+    background-color: #050505 !important;
+}
+
+
+.steps-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    transition: 0.3s;
+}
+
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #2c2f45;
+    background-color: #1a1d29;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.line {
+    width: 80px;
+    height: 2px;
+    background-color: #2c2f45;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.active-step {
+    color: white !important;
+}
+
+.active-step .step-circle {
+    background-color: #ff4757; 
+    border-color: #ff4757;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 71, 87, 0.5);
+}
+
+.active-line {
+    background-color: #ff4757 !important;
+    box-shadow: 0 0 8px rgba(255, 71, 87, 0.3);
+}
+
+.shadow-red {
+    border: 2px solid #fff !important;
+}
+
+.btn-pagar.mt-5 {
+    background: transparent;
+    color: #ff4757 !important;
+    border: 2px solid #ff4757 !important;
+    padding: 12px 40px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-pagar.mt-5:hover {
+    color: white !important;
+    background: #ff4757;
+    box-shadow: 0 0 20px rgba(255, 71, 87, 0.4);
+    transform: scale(1.05);
+}
+
+.btn-pagar.mt-5::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: all 0.6s;
+    z-index: -1;
+}
+
+.btn-pagar.mt-5:hover::before {
+    left: 100%;
+}
+
+.btn-pagar.mt-5:active {
+    transform: scale(0.98);
+}

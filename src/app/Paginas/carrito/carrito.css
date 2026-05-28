@@ -1,0 +1,270 @@
+/* =========================================
+   1. CONFIGURACIÓN GLOBAL Y CONTENEDOR
+   ========================================= */
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.carrito-container {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #1f2338 0%, transparent 30%),
+    radial-gradient(circle at bottom right, #ff47571f 0%, transparent 30%),
+    #0b0c14;
+  color: white;
+  padding-inline: 40px;
+  /* Añadimos padding superior para que el contenido no empiece debajo del navbar */
+  padding-top: 100px; 
+}
+
+/* =========================================
+   2. CABECERA Y PASOS (STEPS)
+   ========================================= */
+.titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.subtitulo {
+  color: #888888;
+  margin: 0;
+}
+
+.logo-box {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ff4757, #ff6b81);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  box-shadow: 0 0 30px #ff475752;
+}
+
+.steps-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #888888;
+}
+
+.step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #4e5166;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1a1c29;
+}
+
+.active-step {
+  color: white;
+}
+
+.active-step .step-circle {
+  background: #ff4757;
+  border: none;
+  box-shadow: 0 0 20px #ff47577c;
+}
+
+.line {
+  width: 80px;
+  height: 2px;
+  background: #4e5166;
+}
+
+/* =========================================
+   3. ESTADO VACÍO (EMPTY STATE)
+   ========================================= */
+.empty-cart {
+  background: rgba(26, 28, 41, 0.8);
+  border: 1px solid #2c2f45;
+  border-radius: 30px;
+  padding: 70px 40px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+}
+
+.icon-empty {
+  font-size: 5rem;
+  color: #ff4757;
+  margin-bottom: 20px;
+}
+
+.empty-cart h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.empty-cart p {
+  color: #888888;
+}
+
+.btn-discover {
+  margin-top: 30px;
+  background: linear-gradient(135deg, #ff4757, #ff6b81);
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 15px;
+  font-weight: 600;
+}
+
+/* =========================================
+   4. ITEMS Y TARJETAS DE JUEGO
+   ========================================= */
+.game-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  height: 320px;
+  border: 1px solid #2c2f45;
+  transition: .4s;
+}
+
+.game-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 40px rgba(255, 71, 87, 0.2);
+}
+
+.game-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.9), transparent);
+}
+
+.game-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+}
+
+.item-card {
+  background: #1a1c29;
+  border: 1px solid #2c2f45;
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.item-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* =========================================
+   5. RESUMEN DE PAGO (CORRECCIÓN DE TRASPASO)
+   ========================================= */
+.summary-card {
+  background: rgba(26, 28, 41, 0.85);
+  border: 1px solid #2c2f45;
+  border-radius: 30px;
+  padding: 30px;
+  
+  /* CORRECCIÓN: Sticky para que no traspase el Navbar */
+  position: sticky;
+  top: 110px; /* Ajusta este valor según la altura real de tu navbar */
+  z-index: 10; /* Menor que el z-index de la barra de navegación */
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.summary-header i {
+  font-size: 1.5rem;
+  color: #ff4757;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #c5c5c5;
+}
+
+.total-line {
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 700;
+  border-top: 1px solid #2c2f45;
+  padding-top: 20px;
+}
+
+/* =========================================
+   6. BOTONES Y ACCIONES
+   ========================================= */
+.precio {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.btn-add {
+  background: #ff4757;
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+}
+
+.btn-checkout {
+  background: linear-gradient(135deg, #ff4757, #ff6b81);
+  border: none;
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
+  font-weight: 600;
+  margin-top: 20px;
+  width: 100%; /* Aseguramos que ocupe todo el ancho del resumen */
+}
+
+.btn-remove {
+  background: #ff4757;
+  border: none;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+}
+
+.item-card img {
+    width: 120px;
+    height: 150px;
+    object-fit: cover; /* Corta la imagen para llenar el espacio sin estirarla */
+    object-position: center; /* Centra el enfoque de la imagen */
+    border: 1px solid #2c2f45;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.item-card:hover img {
+    transform: scale(1.05); /* Un pequeño zoom al pasar el mouse por la tarjeta */
+    border-color: #ff4757;
+}

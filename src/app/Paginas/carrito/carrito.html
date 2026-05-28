@@ -1,0 +1,101 @@
+<div class="container-fluid carrito-container py-5">
+  
+  <div class="d-flex align-items-center gap-3 mb-5">
+    <div class="logo-box">
+      <i class="bi bi-controller"></i>
+    </div>
+    <div>
+      <h2 class="titulo">Carrito Gamer</h2>
+      <p class="subtitulo">Tus juegos listos para desbloquear</p>
+    </div>
+  </div>
+
+  <div class="steps-container mb-5">
+    <div class="step active-step">
+      <div class="step-circle">1</div>
+      <span>Carrito</span>
+    </div>
+    <div class="line"></div>
+    <div class="step">
+      <div class="step-circle">2</div>
+      <span>Pago</span>
+    </div>
+    <div class="line"></div>
+    <div class="step">
+      <div class="step-circle">3</div>
+      <span>Activación</span>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-lg-8">
+
+      <div *ngIf="carrito.length === 0" class="empty-cart text-center py-5">
+        <div class="icon-empty mb-4">
+          <i class="bi bi-cart-x" style="font-size: 4rem; color: #ff4b2b;"></i>
+        </div>
+        <h3 class="text-white">Tu carrito está vacío</h3>
+        <p class="text-secondary">Explora nuevos mundos y añade tus juegos favoritos.</p>
+        <button class="btn btn-discover mt-3" routerLink="/">Descubrir Juegos</button>
+      </div>
+
+      <div class="cart-items" *ngIf="carrito.length > 0">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h4 class="text-white">Tus Juegos seleccionados</h4>
+          <button class="btn btn-outline-danger btn-sm" (click)="limpiarCarrito()">
+            <i class="bi bi-trash-fill me-1"></i> Vaciar Carrito
+          </button>
+        </div>
+
+        <div class="item-card mb-3" *ngFor="let item of carrito; let i = index">
+          <img [src]="item.imagen" class="img-fluid" style="width: 100px;" [alt]="item.titulo">
+
+          <div class="ms-3 flex-grow-1">
+            <h5 class="text-white mb-1">{{ item.titulo }}</h5>
+            <p class="text-secondary small mb-2">{{ item.plataformaSeleccionada }}</p>
+            <span class="text-action fw-bold">${{ item.precio | number:'1.0-0' }} COP</span>
+          </div>
+
+          <button class="btn btn-remove ms-auto text-danger" (click)="eliminarJuego(i)">
+            <i class="bi bi-x-circle" style="font-size: 1.5rem;"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="summary-card sticky-top" style="top: 100px;">
+        <div class="summary-header d-flex justify-content-between align-items-center mb-4">
+          <h4 class="m-0">Resumen</h4>
+          <i class="bi bi-receipt text-action" style="font-size: 1.5rem;"></i>
+        </div>
+
+        <div class="summary-line d-flex justify-content-between mb-3 text-secondary">
+          <span>Productos</span>
+          <span>{{ carrito.length }}</span>
+        </div>
+
+        <div class="summary-line d-flex justify-content-between mb-3 text-secondary">
+          <span>Impuestos (IVA 0%)</span>
+          <span>$0</span>
+        </div>
+
+        <hr class="text-secondary">
+
+        <div class="summary-line total-line d-flex justify-content-between mb-4">
+          <span class="h5 text-white">Total</span>
+          <span class="h5 text-action fw-bold">${{ total | number:'1.0-0' }} COP</span>
+        </div>
+
+        <button class="btn btn-checkout w-100 py-3 fw-bold" [disabled]="carrito.length === 0" (click)="irAPagar()">
+          CONTINUAR AL PAGO
+        </button>
+
+        <p class="text-center text-secondary small mt-3">
+          <i class="bi bi-shield-lock me-1"></i> Pago 100% Seguro
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>

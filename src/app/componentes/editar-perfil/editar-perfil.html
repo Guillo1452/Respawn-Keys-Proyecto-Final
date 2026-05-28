@@ -1,0 +1,66 @@
+<div class="perfil-container">
+  <div class="perfil-card">
+    <h1>Editar Perfil</h1>
+
+    <div *ngIf="cargando" class="loader-container">
+      <div class="loader"></div>
+      <p>Cargando perfil...</p>
+    </div>
+
+    <div *ngIf="!cargando">
+
+      <div class="grupo">
+        <label>Nombre</label>
+        <input type="text" [(ngModel)]="nombre">
+      </div>
+
+      <div class="grupo">
+        <label>Apellidos</label>
+        <input type="text" [(ngModel)]="apellidos">
+      </div>
+
+      <div class="grupo">
+        <label>Correo</label>
+        <input type="email" [(ngModel)]="correo">
+      </div>
+
+      <div class="grupo">
+        <label>Nombre Usuario</label>
+        <input type="text" [(ngModel)]="nombreUsuario">
+      </div>
+
+      <div class="grupo">
+        <label>País</label>
+        <input type="text" [(ngModel)]="pais">
+      </div>
+
+      <button class="btn-guardar" (click)="guardarCambios()">
+        Guardar Cambios
+      </button>
+
+      <hr>
+
+      <h2>Cambiar Contraseña</h2>
+
+      <div class="grupo">
+        <label>Contraseña Actual</label>
+        <input type="password" [(ngModel)]="contrasenaActual">
+      </div>
+
+      <div class="grupo">
+        <label>Nueva Contraseña</label>
+        <input type="password" [(ngModel)]="nuevaContrasena">
+      </div>
+
+      <div class="grupo">
+        <label>Confirmar Contraseña</label>
+        <input type="password" [(ngModel)]="confirmarContrasena">
+      </div>
+
+      <button class="btn-password" (click)="cambiarContrasena()">
+        Cambiar Contraseña
+      </button>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,200 @@
+.pagos-container {
+  min-height: 100vh;
+  background: #0b0c14; /* Tu fondo oscuro base */
+  color: white;
+  padding-top: 80px;
+}
+
+.pago-card, .resumen-pago-card {
+  background: rgba(26, 28, 41, 0.9);
+  border: 1px solid #2c2f45;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.form-control {
+  background: #151724;
+  border: 1px solid #2c2f45;
+  color: white;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.form-control:focus {
+  background: #1a1c29;
+  border-color: #ff4757;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 71, 87, 0.2);
+}
+
+.input-group-text {
+  background: #2c2f45;
+  border: 1px solid #2c2f45;
+  color: #ff4757;
+}
+
+.btn-pagar {
+  background: linear-gradient(135deg, #ff4757, #ff6b81);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.btn-pagar:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 71, 87, 0.4);
+}
+
+.btn-pagar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.total-pago {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+/* =========================================
+   1. CONFIGURACIÓN GLOBAL (Consistente con Carrito)
+   ========================================= */
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.pagos-container {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #1f2338 0%, transparent 30%),
+    radial-gradient(circle at bottom right, #ff47571f 0%, transparent 30%),
+    #0b0c14;
+  color: white;
+  padding-inline: 40px;
+  padding-top: 100px; 
+}
+
+/* =========================================
+   2. BARRA DE PASOS (IGUAL AL CARRITO)
+   ========================================= */
+.steps-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #888888;
+}
+
+.step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #4e5166;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1a1c29;
+  font-weight: 600;
+}
+
+.active-step {
+  color: white;
+}
+
+.active-step .step-circle {
+  background: #ff4757;
+  border: none;
+  box-shadow: 0 0 20px #ff47577c;
+  color: white;
+}
+
+.line {
+  width: 80px;
+  height: 2px;
+  background: #4e5166;
+}
+
+.active-line {
+  background: #ff4757;
+  box-shadow: 0 0 10px #ff475752;
+}
+
+/* =========================================
+   3. TARJETAS DE PAGO (ESTILO SUMMARY-CARD)
+   ========================================= */
+.pago-card, .resumen-pago-card {
+  background: rgba(26, 28, 41, 0.85);
+  border: 1px solid #2c2f45;
+  border-radius: 30px;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+}
+
+/* Estilo para los inputs tipo "Gamer" */
+.form-control {
+  background: #0b0c14;
+  border: 1px solid #2c2f45;
+  color: white;
+  border-radius: 12px;
+  padding: 12px;
+  transition: 0.3s;
+}
+
+.form-control:focus {
+  background: #0b0c14;
+  border-color: #ff4757;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 71, 87, 0.2);
+  outline: none;
+}
+
+.input-group-text {
+  background: #1a1c29;
+  border: 1px solid #2c2f45;
+  color: #ff4757;
+  border-radius: 12px 0 0 12px;
+}
+
+/* =========================================
+   4. BOTÓN DE ACCIÓN (IGUAL A BTN-CHECKOUT)
+   ========================================= */
+.btn-pagar {
+  background: linear-gradient(135deg, #ff4757, #ff6b81);
+  border: none;
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: .3s;
+  width: 100%;
+  box-shadow: 0 0 20px #ff47573d;
+}
+
+.btn-pagar:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px #ff475762;
+}
+
+.btn-pagar:disabled {
+  opacity: 0.6;
+  filter: grayscale(0.5);
+  cursor: not-allowed;
+}
+
+.total-pago {
+  font-size: 1.5rem;
+  font-weight: 800;
+}

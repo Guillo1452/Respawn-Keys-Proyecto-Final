@@ -1,0 +1,31 @@
+.footer {
+    background-color: #0b0c14 !important;
+}
+
+.hover-red {
+    transition: all 0.3s ease;
+}
+
+.hover-red:hover {
+    color: #ff4757 !important;
+    padding-left: 5px;
+}
+
+.payment-icon {
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.3s ease;
+}
+
+.payment-icon:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
+}
+
+h6 {
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+footer {
+    width: 100%;
+}
