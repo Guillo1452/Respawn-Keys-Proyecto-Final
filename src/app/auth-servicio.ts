@@ -18,13 +18,13 @@ import {
 } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBV3rfH4GlRx1XQ8wpj0jWX6KRzwu5r9Ss",
-  authDomain: "respawnkeys-1f39b.firebaseapp.com",
-  projectId: "respawnkeys-1f39b",
-  storageBucket: "respawnkeys-1f39b.firebasestorage.app",
-  messagingSenderId: "777666885058",
-  appId: "1:777666885058:web:d49da6b0d5f5072540d25b",
-  measurementId: "G-ZV3KQF7N8L"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
 };
 
 const app = initializeApp(firebaseConfig);
